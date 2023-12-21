@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: $mainFontSize + px;
+  font-family: $roboto;
+}
+img {
+  width: 100%;
+  image-rendering: auto;
+  object-fit: cover;
+}
+.btn {
+  background-color: transparent;
+  outline: unset;
+  border: unset;
+}
+.container {
+  max-width: $viewPointWidth + px;
+  width: 100%;
+  margin: 0 auto;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: map-get($color, 1);
+    font-size: _clamp(14, 18, 18);
+    font-weight: 300;
+    span {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: _clamp(-12, -12, -2);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: map-get($color, 1);
+        width: 82%;
+        height: _clamp(2, 4, 4);
+        display: none;
+      }
+    }
+    &.hover {
+      text-transform: lowercase;
+      padding-left: _clamp(
+        5,
+        calc(calc(185 / 2) + 10.25),
+        calc(calc(185 / 2) + 10.25)
+      );
+      padding-right: _clamp(
+        5,
+        calc(calc(185 / 2) + 10.25),
+        calc(calc(185 / 2) + 10.25)
+      );
+      span {
+        &::after {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}
+.icon {
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: _clamp(-12, -12, -2);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: map-get($color, 1);
+    width: 100%;
+    height: _clamp(2, 4, 4);
+  }
+}

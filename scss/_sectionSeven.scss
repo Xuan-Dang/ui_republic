@@ -1,0 +1,124 @@
+.seven {
+  &__container {
+    // position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: _clamp(10, 150, 150);
+    padding-bottom: _clamp(10, 133, 133);
+    padding-left: _clamp(10, 240, 240);
+    @include media(820px) {
+      padding: _rem(16);
+    }
+  }
+  &__content {
+    width: _clamp(300, 445, 445);
+    @include media(820px) {
+      display: flex;
+      width: 100%;
+    }
+    @include media(480px) {
+      flex-direction: column;
+    }
+  }
+  &__content-first {
+    background-color: map-get($color, 7);
+    padding-top: _clamp(10, 43, 43);
+    padding-right: _clamp(10, 21.6, 21.6);
+    padding-bottom: _clamp(10, 10, 10);
+    padding-left: _clamp(10, 45.6, 45.6);
+    position: relative;
+    @include media(820px) {
+      flex: 1;
+    }
+    &__label {
+      color: map-get($color, 4);
+      font-style: italic;
+      font-weight: 500;
+      font-size: _clamp(12, 16, 16);
+      line-height: _clamp(calc(1.25 * 12), 21, 21);
+      letter-spacing: _clamp(1, 2, 2);
+    }
+    &__title {
+      color: map-get($color, 1);
+      font-size: _clamp(16, 53.88, 53.88);
+      line-height: _clamp(calc(1.25 * 16), 72, 72);
+      letter-spacing: _clamp(1, 4.25, 4.25);
+    }
+    &__text {
+      color: map-get($color, 1);
+      font-size: _clamp(12, 16, 16);
+      line-height: _clamp(calc(1.25 * 12), 21, 21);
+      padding-bottom: _clamp(5, 40, 40);
+    }
+    &__img {
+      position: absolute;
+      width: _clamp(30, 54, 54);
+      left: _clamp(10, 46, 46);
+      bottom: _clamp(10, 52, 52);
+    }
+  }
+  &__content-second {
+    @include media(820px) {
+      flex: 1;
+    }
+    &__box {
+      display: flex;
+      color: map-get($color, 1);
+      @include media(820px) {
+        flex-direction: column;
+      }
+      &--left {
+        width: _clamp(150, 253, 253);
+        background-color: map-get($color, 10);
+        padding-top: _clamp(10, 32, 32);
+        padding-right: _clamp(10, 49.6, 49.6);
+        padding-bottom: _clamp(5, 8, 8);
+        padding-left: _clamp(10, 46.3, 46.3);
+        @include media(820px) {
+          width: 100%;
+        }
+        .label {
+          font-size: _clamp(12, 16, 16);
+          line-height: _clamp(calc(1.25 * 12), 21, 21);
+          font-weight: 500;
+          font-style: italic;
+        }
+        .text {
+          margin-top: _clamp(5, 15, 15);
+          font-size: _clamp(16, 32, 32);
+          line-height: _clamp(calc(1.25 * 16), 43, 43);
+          letter-spacing: _clamp(1, 3.25, 3.25);
+        }
+      }
+      &--right {
+        font-size: _clamp(16, 32, 32);
+        line-height: _clamp(calc(1.25 * 16), 28, 28);
+        font-weight: 400;
+        .btn {
+          width: _clamp(100, 193, 193);
+          @include media(820px) {
+            width: 50%;
+          }
+          span {
+            display: block;
+            transform: translateX(_clamp(10, 81.8, 81.8));
+            @include media(820px) {
+              transform: translateX(0);
+              padding-left: _rem(16);
+            }
+          }
+        }
+        .top {
+          padding-top: _clamp(10, 40, 40);
+          padding-bottom: _clamp(15, 40.1, 40.1);
+          background-color: map-get($color, 2);
+        }
+        .bottom {
+          padding-top: _clamp(10, 46, 46);
+          padding-bottom: _clamp(15, 40, 40);
+          background-color: map-get($color, 4);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+.eight {
+  &__container {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: _clamp(16, 214, 214);
+    padding-right: _clamp(16, 339, 339);
+    padding-bottom: _clamp(16, 180, 180);
+    padding-left: _clamp(16, 342, 342);
+    @include media(768px) {
+      padding: _rem(50);
+    }
+    @include media(480px) {
+      padding: _rem(16);
+    }
+  }
+  &__wrapper {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    @include media(768px) {
+      width: 100%;
+    }
+    @include media(480px) {
+      flex-direction: column;
+    }
+  }
+  &__content {
+    width: _clamp(100, 366, 366);
+    background-color: map-get($color, 2);
+    padding-top: _clamp(5, 35, 35);
+    padding-bottom: _clamp(16, 111.3, 111.3);
+    padding-left: _clamp(7, 35, 35);
+    color: map-get($color, 1);
+    @include media(768px) {
+      flex: 1;
+    }
+    @include media(480px) {
+      width: 100%;
+    }
+    &__title {
+      text-transform: lowercase;
+      font-size: _clamp(16, 48, 48);
+      line-height: _clamp(calc(1.25 * 16), 57.6, 57.6);
+      margin-bottom: _clamp(5, 35, 35);
+      letter-spacing: _clamp(1, 5, 5);
+    }
+    &__text {
+      font-size: _clamp(12, 16, 16);
+      line-height: _clamp(calc(1.25 * 12), 28, 28);
+      margin-bottom: _clamp(5, 35, 35);
+    }
+    &__phone-number {
+      font-size: _clamp(14, 32, 32);
+      line-height: _clamp(calc(1.25 * 14), 28, 28);
+      margin-bottom: _clamp(5, 53, 53);
+    }
+    &__social-list {
+      display: flex;
+      align-items: center;
+      margin-bottom: _clamp(10, 53, 53);
+    }
+    &__social-item {
+      margin-right: _clamp(5, 20, 20);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__social-link {
+      display: flex;
+      width: _clamp(20, 42.01, 42.01);
+    }
+    &__address {
+      font-size: _clamp(14, 32, 32);
+      line-height: _clamp(calc(1.25 * 14), 28, 28);
+    }
+  }
+  &__form {
+    width: _clamp(200, 553, 553);
+    background-color: map-get($color, 7);
+    overflow-x: hidden;
+    @include media(768px) {
+      flex: 1;
+    }
+    @include media(480px) {
+      width: 100%;
+    }
+    &__title {
+      font-size: _clamp(16, 48, 48);
+      line-height: _clamp(calc(1.25 * 16), 57.6, 57.6);
+      color: map-get($color, 1);
+      padding-top: _clamp(5, 35, 35);
+      transform: translateX(_clamp(10, 34.3, 34.3));
+      letter-spacing: _clamp(1, 4, 4);
+      margin-bottom: _clamp(10, 35, 35);
+    }
+    &__element {
+      display: flex;
+      flex-direction: column;
+      padding-right: _clamp(16, 34, 34);
+      padding-bottom: _clamp(16, 40, 40);
+      padding-left: _clamp(16, 37, 37);
+    }
+    &__input,
+    &__textarea {
+      border: 0;
+      outline: 0;
+      font-size: _clamp(12, 32, 32);
+      line-height: _clamp(calc(1.25 * 16), 38.4, 38.4);
+      background-color: map-get($color, 14);
+      color: map-get($color, 1);
+      font-family: $roboto;
+    }
+    &__input {
+      margin-bottom: _clamp(5, 22, 22);
+      padding-top: _clamp(3, 15, 15);
+      padding-bottom: _clamp(3, 6.3, 6.3);
+      padding-left: _clamp(3, 18.8, 18.8);
+      letter-spacing: _clamp(1, 2.5, 2.5);
+      &:last-child {
+        margin-bottom: _clamp(5, 21, 21);
+        padding-top: _clamp(3, 8.3, 8.3);
+        padding-bottom: _clamp(3, 7.7, 7.7);
+        padding-left: _clamp(3, 18.9, 18.9);
+      }
+    }
+    &__textarea {
+      margin-bottom: _clamp(5, 20, 20);
+      padding-top: _clamp(3, 10, 10);
+      padding-bottom: _clamp(3, 80, 80);
+      padding-left: _clamp(3, 18.7, 18.7);
+      letter-spacing: _clamp(1, 2, 2);
+    }
+    &__btn {
+      padding-top: _clamp(3, 7.3, 7.3);
+      padding-right: _clamp(3, 50, 50);
+      padding-bottom: _clamp(3, 8.7, 8.7);
+      padding-left: _clamp(3, 57.1, 57.1);
+      width: _clamp(100, 235, 235);
+      cursor: pointer;
+      background-color: map-get($color, 4);
+      border: 0;
+      outline: 0;
+      color: map-get($color, 1);
+      text-transform: uppercase;
+      font-size: _clamp(12, 32, 32);
+      line-height: _clamp(calc(1.25 * 12), 38.4, 38.4);
+    }
+  }
+  &__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: _clamp(5, 40, 40) solid map-get($color, 13);
+    height: 100%;
+    z-index: 1;
+  }
+}

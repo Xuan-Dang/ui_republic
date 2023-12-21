@@ -1,0 +1,65 @@
+.footer {
+  &__container {
+    background-color: map-get($color, 7);
+    padding-top: _clamp(16, 130, 130);
+    padding-bottom: _clamp(16, 130, 130);
+    padding-left: _clamp(16, 250, 250);
+    @include media(992px) {
+      padding: _rem(16);
+    }
+  }
+  &__nav {
+    justify-content: space-between;
+    &.nav {
+      @include media(992px) {
+        flex-direction: column-reverse;
+      }
+    }
+    .nav {
+      &__list {
+        transform: translateY(_clamp(-7, -7, 0));
+        flex-wrap: wrap;
+      }
+      &__item {
+        margin-right: _clamp(10, 60, 60);
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      &__link {
+        font-size: _clamp(12, 18, 18);
+        line-height: _clamp(calc(1.25 * 12), 21.6, 21.6);
+        letter-spacing: _clamp(1, 3.2, 3.2);
+        @include media(480px) {
+          margin-top: _rem(16);
+        }
+        span {
+          &::after {
+            display: block;
+            width: 80%;
+            left: 45%;
+          }
+        }
+        &.hover {
+          padding: 0;
+          padding-right: _clamp(0, 5, 5);
+          span {
+            &::after {
+              width: 105%;
+            }
+          }
+        }
+      }
+      &__brand {
+        @include media(992px) {
+          margin-bottom: _rem(30);
+        }
+        padding-right: _clamp(50, 239, 239);
+        background-color: map-get($color, 4);
+        padding-top: _clamp(16, 24, 24);
+        padding-bottom: _clamp(16, 30, 30);
+        padding-left: _clamp(16, 36, 36);
+      }
+    }
+  }
+}

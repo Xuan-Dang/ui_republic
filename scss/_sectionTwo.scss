@@ -1,0 +1,198 @@
+.two {
+  &__container {
+    background-color: map-get($color, 10);
+    overflow: hidden;
+    position: relative;
+    padding: _clamp(16, 255, 255) 0 _clamp(16, 196, 196)
+      _clamp(16, 246.5, 246.5);
+    @include media(992px) {
+      padding: _rem(16);
+    }
+  }
+  &__content-title {
+    width: _clamp(100, 696, 696);
+    font-size: _clamp(16, 53.88, 53.88);
+    line-height: _clamp(calc(1.25 * 16), 64.66, 64.66);
+    letter-spacing: _clamp(0, 4.5, 4.5);
+    color: map-get($color, 1);
+    margin-bottom: _clamp(5, 40, 40);
+    @include media(992px) {
+      width: 100%;
+    }
+  }
+  &__content-text {
+    width: _clamp(75, 445, 455);
+    font-size: _clamp(12, 16, 16);
+    line-height: _clamp(calc(12 * 1.25), 28, 28);
+    color: map-get($color, 1);
+    margin-bottom: _clamp(15, 110, 110);
+    @include media(992px) {
+      width: 100%;
+    }
+  }
+  &__content-link {
+    background-color: map-get($color, 11);
+    display: flex;
+    width: _clamp(100, 445, 445);
+    padding: _clamp(5, 52, 52) _clamp(5, 100, 100) _clamp(5, 53, 53)
+      _clamp(5, 115, 115);
+    text-decoration: none;
+    color: map-get($color, 1);
+    text-transform: uppercase;
+    letter-spacing: _clamp(1, 2.25, 2.25);
+    font-size: _clamp(14, 18, 18);
+    line-height: (calc(14 * 1.25), 21.6, 21.6);
+    position: relative;
+    @include media(1200px) {
+      width: fit-content;
+    }
+    span {
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: _clamp(-15, -15, -2);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: map-get($color, 1);
+        width: 87%;
+        height: _clamp(2, 4, 4);
+      }
+    }
+  }
+  &__gellary {
+    display: grid;
+    grid-template-columns: _clamp(150, 253, 253) _clamp(150, 253, 253) _clamp(
+        150,
+        253,
+        253
+      );
+    gap: _clamp(10, 33, 33);
+    position: absolute;
+    top: _clamp(16, 260, 260);
+    right: _clamp(-40, -40, 0);
+    @include media(992px) {
+      position: static;
+      grid-template-columns: repeat(auto-fill, minmax(_rem(200), 1fr));
+      gap: _rem(16);
+      margin-top: _rem(16);
+    }
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__body {
+      padding-bottom: _clamp(10, 57, 57);
+      padding-top: _clamp(5, 26.9, 26.9);
+      padding-left: _clamp(5, 31, 31);
+    }
+    &__image {
+      &.use-icon {
+        min-height: _rem(241);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: _clamp(16, 87.28, 87.28);
+        letter-spacing: _clamp(0, 5, 5);
+        line-height: _clamp(calc(16 * 1.25), 104.74, 10.74);
+        color: map-get($color, 1);
+        padding: _clamp(5, 80, 80);
+      }
+      img {
+        image-rendering: optimizeQuality;
+      }
+    }
+    &__text {
+      font-size: _clamp(12, 16, 16);
+      letter-spacing: _clamp(0, 1.5, 1.5);
+      line-height: _clamp(calc(1.25 * 12), 19.2, 19.2);
+    }
+    &__title {
+      font-size: _clamp(14, 22, 22);
+      letter-spacing: _clamp(0, 2.5, 2.5);
+      line-height: _clamp(calc(1.25 * 14), 26.4, 26.4);
+      font-weight: 700;
+      font-style: italic;
+    }
+    &__arrow {
+      display: flex;
+      text-decoration: none;
+      justify-content: end;
+      transform: translateY(_clamp(-14.7, -14.7, -5));
+      padding-right: _clamp(5, 15.6, 15.6);
+    }
+    &.bg-white {
+      background-color: map-get($color, 1);
+      .card__text,
+      .card__title {
+        color: map-get($color, 7);
+      }
+      .card__text {
+        margin-bottom: _clamp(10, 42, 42);
+      }
+      .card__body {
+        padding-left: _clamp(5, 34, 34);
+      }
+      .card__arrow {
+        color: map-get($color, 7);
+      }
+    }
+    &.bg-violet {
+      background-color: map-get($color, 2);
+      .card__text,
+      .card__title {
+        color: map-get($color, 1);
+      }
+      .card__text {
+        margin-bottom: _clamp(10, 38.6, 38.6);
+        letter-spacing: _clamp(0, 1.25, 1.25);
+      }
+      .card__title {
+        letter-spacing: _clamp(0, 3.5, 3.5);
+      }
+      .card__body {
+        padding-top: _clamp(5, 23, 23);
+      }
+      .card__arrow {
+        color: map-get($color, 1);
+      }
+    }
+    &.bg-orange {
+      background-color: map-get($color, 4);
+      .card__image {
+        order: 2;
+        overflow-y: hidden;
+        img {
+          height: _clamp(100, 260, 260);
+          transform: translateY(_clamp(5, 20, 20));
+        }
+        @include media(768px) {
+          img {
+            height: auto;
+          }
+        }
+      }
+      .card__body {
+        order: 1;
+        padding-top: _clamp(0, 25, 25);
+      }
+      .card__text {
+        letter-spacing: _clamp(0, 1, 1);
+      }
+      .card__title {
+        letter-spacing: _clamp(0, 3, 3);
+      }
+      .card__text,
+      .card__title {
+        color: map-get($color, 1);
+      }
+      .card__text {
+        margin-bottom: _clamp(10, 38.6, 38.6);
+      }
+      .card__arrow {
+        display: none;
+      }
+    }
+  }
+}

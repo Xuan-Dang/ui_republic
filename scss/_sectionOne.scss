@@ -1,0 +1,99 @@
+.one {
+  &__container {
+    background-color: map-get($color, 2);
+    background-repeat: no-repeat;
+    padding-top: _clamp(50, 290, 290);
+    padding-bottom: _clamp(100, calc(310 + 170), calc(310 + 170));
+    background-position: right _clamp(15, 152, 152) bottom _clamp(10, 105, 105);
+    background-size: _clamp(55, 546, 546);
+    position: relative;
+  }
+  .content {
+    margin-left: _clamp(25, 244, 244);
+    width: fit-content;
+    position: relative;
+    &__title {
+      position: relative;
+      z-index: 2;
+      width: _clamp(138, 366, 366);
+      font-size: _clamp(16, 53.88, 53.88);
+      letter-spacing: _clamp(0, 4.5, 4.5);
+      line-height: _clamp(calc(1.25 * 16), 64.66, 64.66);
+      color: map-get($color, 1);
+      font-weight: 300;
+    }
+    &__text {
+      position: absolute;
+      z-index: 1;
+      bottom: _clamp(-170, -170, 0);
+      right: _clamp(-205, -205, 0);
+      width: _clamp(150, 388, 388);
+      font-size: _clamp(12, 16, 16);
+      line-height: _clamp(calc(1.25 * 12), 28, 28);
+      background-color: map-get($color, 3);
+      padding-top: _clamp(5, 30.3, 30.3);
+      padding-bottom: _clamp(0, 20, 20);
+      padding-left: _clamp(8, 46, 46);
+      padding-right: _clamp(6, 32, 32);
+      color: map-get($color, 1);
+      @include media(480px) {
+        bottom: _rem(-55);
+      }
+      p {
+        transform: translateY(_clamp(-5, -5, 0));
+        height: _clamp(46, 145, 145);
+        overflow-y: hidden;
+      }
+    }
+  }
+  &__icons {
+    position: absolute;
+    transform: translate(_clamp(10, 100, 100), _clamp(9, 343, 343));
+    display: flex;
+    .icon-group {
+      padding-left: _clamp(5, 60, 60);
+      u {
+        text-decoration: none;
+        color: map-get($color, 1);
+        font-size: _clamp(12, 25, 25);
+        line-height: _clamp(calc(12 * 1.25), 36, 36);
+        margin-left: _clamp(5, 8, 8);
+        letter-spacing: _clamp(0.5, 2.25, 2.25);
+      }
+    }
+    .heart {
+      font-size: _clamp(12, 30, 30);
+      line-height: _clamp(calc(12 * 1.25), 36, 36);
+      color: map-get($color, 4);
+      &.icon {
+        &::after {
+          bottom: _clamp(-12, -12, 0);
+        }
+      }
+    }
+    .down {
+      font-size: _clamp(12, 36, 36);
+      color: map-get($color, 1);
+      margin-left: _clamp(54, 560, 560);
+      line-height: _clamp(calc(12 * 1.25), 43.2, 43.2);
+      &.icon {
+        &::after {
+          bottom: _clamp(-5, -5, 0);
+        }
+      }
+    }
+  }
+  &__line {
+    position: absolute;
+    background-color: map-get($color, 1);
+    width: _rem(2);
+    height: _clamp(100, 1061, 1061);
+    top: _clamp(100, 277, 277);
+    left: _clamp(50, 215, 215);
+    z-index: 99;
+    @include media(992px) {
+      left: unset;
+      right: _rem(14);
+    }
+  }
+}

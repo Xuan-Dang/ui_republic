@@ -1,0 +1,69 @@
+.five {
+  &__container {
+    display: grid;
+    grid-template-columns: auto _clamp(100, 633, 633);
+    padding-top: _clamp(16, 180, 180);
+    padding-right: _clamp(16, 152, 152);
+    padding-bottom: _clamp(16, 131, 131);
+    padding-left: _clamp(16, 244.8, 244.8);
+    @include media(560px) {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: _rem(30);
+    }
+  }
+  &__content {
+    position: relative;
+    padding-top: _clamp(50, calc(42.8 + 130), calc(42.8 + 130));
+  }
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: _clamp(100, 680, 680);
+    font-size: _clamp(16, 53.88, 53.88);
+    line-height: _clamp(calc(1.25 * 16), 64.66, 64.66);
+    letter-spacing: _clamp(1, 4.5, 4.5);
+    color: map-get($color, 4);
+    @include media(560px) {
+      position: static;
+      width: 100%;
+    }
+  }
+  &__text {
+    font-size: _clamp(12, 16, 16);
+    line-height: _clamp(calc(12 * 1.25), 28, 28);
+    font-weight: 300;
+    width: _clamp(100, 445.25, 445.25);
+    padding-bottom: _clamp(10, 35, 35);
+    margin-bottom: _clamp(5, 12, 12);
+    @include media(560px) {
+      width: 100%;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    .item-icon {
+      font-size: _clamp(12, 32, 32);
+      line-height: _clamp(calc(1.25 * 12), 41, 41);
+      color: map-get($color, 4);
+      flex: 1;
+    }
+    .item-content {
+      flex: 8;
+      .main-content {
+        font-size: _clamp(16, 32, 32);
+        line-height: _clamp(calc(1.25 * 16), 42, 42);
+        color: map-get($color, 7);
+        letter-spacing: _clamp(1, 2.5, 2.5);
+      }
+      .paragraph {
+        font-size: _clamp(12, 16, 16);
+        line-height: _clamp(calc(1.25 * 12), 21, 21);
+        font-weight: 300;
+        color: map-get($color, 7);
+      }
+    }
+  }
+}

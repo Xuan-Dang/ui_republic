@@ -1,0 +1,87 @@
+.six {
+  &__container {
+    display: grid;
+    grid-template-columns: _clamp(100, 1167, 1167) auto;
+    overflow-x: hidden;
+    @include media(820px) {
+      display: flex;
+      flex-direction: column-reverse;
+      position: relative;
+    }
+  }
+  &__content {
+    background-color: map-get($color, 4);
+    padding-top: _clamp(16, 175, 175);
+    padding-right: _clamp(16, 403.3, 403.3);
+    padding-bottom: _clamp(16, 215, 215);
+    padding-left: _clamp(16, 240.8, 240.8);
+    @include media(820px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: transparent;
+      padding: _rem(50);
+      width: 80%;
+    }
+  }
+  &__title {
+    width: _clamp(100, 518, 518);
+    font-size: _clamp(16, 96, 96);
+    line-height: _clamp(calc(1.25 * 16), 115.2, 115.2);
+    color: map-get($color, 1);
+    margin-bottom: _clamp(16, 50, 50);
+    letter-spacing: _clamp(1, 9, 9);
+    @include media(820px) {
+      color: map-get($color, 7);
+    }
+  }
+  &__input-group {
+    @include media(820px) {
+      background-color: map-get($color, 11);
+      padding: _rem(16);
+      width: 100%;
+    }
+    input {
+      display: block;
+      width: _clamp(100, 444, 444);
+      font-size: _clamp(12, 32, 32);
+      line-height: _clamp(calc(12 * 1.25), 38.4, 38.4);
+      border: 0;
+      outline: 0;
+      margin-bottom: _clamp(10, 20, 20);
+      color: map-get($color, 7);
+      padding-top: _clamp(2, 8.6, 8.6);
+      padding-bottom: _clamp(2, 7.4, 7.4);
+      padding-left: _clamp(5, 17.3, 17.3);
+      padding-right: _clamp(5, 17.3, 17.3);
+      @include media(820px) {
+        width: 100%;
+      }
+      &.btn {
+        width: _clamp(50, 245, 245);
+        background-color: map-get($color, 7);
+        color: map-get($color, 1);
+        cursor: pointer;
+        padding-top: _clamp(2, 12, 12);
+        padding-bottom: _clamp(2, 10, 10);
+        padding-left: _clamp(5, 56.1, 56.1);
+        padding-right: _clamp(5, 55.9, 55.9);
+        @include media(820px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__image {
+    img {
+      transform: translateY(_clamp(100, 101, 101))
+        translateX(_clamp(-255, -255, -20));
+      width: _clamp(100, 511, 511);
+      @include media(820px) {
+        transform: unset;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+$color: (
+  1: #ffffff,
+  2: #7853a2,
+  3: #ba4693,
+  4: #ea572a,
+  5: rgb(57, 148, 209, 18%),
+  7: #414042,
+  8: #e5e0f0,
+  9: #9277b5,
+  10: #3994d1,
+  11: rgb(255, 255, 255, 18%),
+  13: #e6e1f0,
+  14: #58595b,
+);
+$roboto: "Roboto", sans-serif;
+$built: "Built Titling", sans-serif;
+$mainFontSize: 16;
+$viewPointWidth: 1600;
+
+$shadow: (
+  small: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075),
+  normal: 0 0.5rem 1rem rgba(0, 0, 0, 0.15),
+  large: 0 1rem 3rem rgba(0, 0, 0, 0.175),
+);
